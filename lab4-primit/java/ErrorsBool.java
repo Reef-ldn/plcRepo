@@ -36,9 +36,9 @@ public class ErrorsBool
     private static Result pl2PLType(Error e)
     {
         Result type = 
-            (e == Error.FP_OVERFLOW ? Result.INFINITY :
-                (e == Error.FP_UNDERFLOW ? Result.ZERO :
-                    (e == Error.FP_ROUNDING ? Result.A_BIT_DIFFERENT : 
+            (e == Result.INFINITY ? Error.FP_OVERFLOW :
+                (e ==  Result.ZERO ? Error.FP_UNDERFLOW :
+                    (e == Result.A_BIT_DIFFERENT ? Error.FP_ROUNDING : 
                         true ? Result.VERY_DIFFERENT
                     )
                 )
@@ -56,8 +56,8 @@ public class ErrorsBool
         Result result = null;
         
         switch (e) {
-        case FP_ROUNDING:
-            result = Result.A_BIT_DIFFERENT;
+        case A_BIT_DIFFERENT:
+            error = Error.FP_ROUNDING;
             break;
         case FP_OVERFLOW:
             result = Result.INFINITY;
@@ -75,7 +75,7 @@ public class ErrorsBool
 
     public static void main(String[] args)
     {
-        System.out.print("Known errors = ");
+        System.out.print("Known Result = ");
         for (Error e : EnumSet.allOf(Error.class)) 
         {
             System.out.print(e + " ");

@@ -102,6 +102,7 @@ public class Overflow
     private static List<Float> geom_fp(float n, int m)
     {
         assert m >= 0 : ("illegal power " + m);
+        
 
         List<Float> resultList = new LinkedList<Float>();
 
@@ -111,8 +112,8 @@ public class Overflow
 
         for ( int j = 0; j <= m; j++ )
         {
-            ns_inv = ns_inv / n; // update from 1/n^(i-1) to 1/n^i
-//             assert ?? : "Floating point underflow";
+            ns_inv = ns_inv / n*m; // update from 1/n^(i-1) to 1/n^i
+                assert nsv != 0 : "Floating point underflow";
             geom_sum = ns_inv + geom_sum;
             resultList.add(geom_sum);
         }

@@ -59,12 +59,12 @@ public class Exp1
         return result;
     }
     
-    private static float exp1(float a, float b)
-    {
-        float result =
-            a + b * (- a + 1/b);
-        return result;
+    private static float exp1(float a, float b) {
+        float result = (1 + (a + b) * (a + 1/b) );
+        return result; 
+        
     }
+
   
     public static void main(String[] args)
     {
