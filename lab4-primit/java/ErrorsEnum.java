@@ -3,7 +3,7 @@ import java.util.EnumSet;
 
 public class ErrorsEnum
 {
-    enum Error { FP_ROUNDING, FP_OVERFLOW, FP_UNDERFLOW, INT_OVERFLOW }
+    bashenum Error { FP_ROUNDING, FP_OVERFLOW, FP_UNDERFLOW, INT_OVERFLOW }
 
     enum Result { A_BIT_DIFFERENT, INFINITY, ZERO, VERY_DIFFERENT }
     

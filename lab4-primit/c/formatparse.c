@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
 
     char resultString[10]; // space for up to 9 characters + terminating 0
     int resultInt;
-    char input[] = "result == 123 heh?";
+		char input[] = "result == 123 heh?";
     int numberOfCorrectParses = sscanf(input, "result = %d", &resultInt);
     printf("resultInt = %d \n", resultInt);
 
